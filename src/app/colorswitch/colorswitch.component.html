@@ -1,5 +1,15 @@
 
 
-<button type="button" (click)="clicked()">Change color!</button>
-<!-- <span>{message}</span> -->
+<!-- <button type="button" (click)="clicked()" [ngClass]="{'green' : isOn, 'red': !isOn}">Change color!</button>
+<span>{{ message }}</span> -->
 
+<button (click)="clicked()">
+  Change Color
+</button>
+<span>   Color: {{message}}</span>
+
+<body [ngClass]="{'lighter' : isOn, 'darker': !isOn}">
+  <h1 [ngClass]="{'f_lighter' : isOn, 'f_darker': !isOn}">
+    Changing Color
+  </h1>
+</body>

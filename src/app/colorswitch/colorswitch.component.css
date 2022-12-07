@@ -1,0 +1,19 @@
+.lighter {
+  background-color: #ffe9a0;
+}
+
+.darker {
+  background-color: #674747;
+}
+
+.f_lighter {
+  color: #cc3636;
+}
+
+.f_darker {
+  color: #fff;
+}
+
+body {
+  height: 500px;
+}

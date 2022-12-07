@@ -14,13 +14,19 @@ let fixture: ComponentFixture<ColorswitchComponent>;
     })
     .compileComponents();
 
+
     fixture = TestBed.createComponent(ColorswitchComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
 
   it('should create', () => {
-    expect(component).toBeTruthy();
+    expect(component).toBeTruthy(); //if it exists
+  });
+
+//test the initial colour
+ it('the initial colour for font and background', () => {
+     expect(component.color).withContext('light at first').toMatch(/Light/i);
   });
 
 
@@ -28,31 +34,33 @@ let fixture: ComponentFixture<ColorswitchComponent>;
     const comp = new ColorswitchComponent();
 
     expect(comp.isOn)
-      .withContext('off at first')
+      .withContext('dark at first')
       .toBe(false);
 
       comp.clicked();
     expect(comp.isOn)
-      .withContext('on after click')
+      .withContext('light after click')
       .toBe(true);
 
       comp.clicked();
     expect(comp.isOn)
-      .withContext('off after second click')
+      .withContext('dark after second click')
       .toBe(false);
   });
 
-  it('#clicked() should set #message to "is on"', ()=>{
+  it('#clicked() should set #color to "is dark"', ()=>{
     const comp = new ColorswitchComponent();
     expect(comp.message)
-      .withContext('off at first')
-      .toMatch(/is off/i);
+      .withContext('dark at first')
+      .toMatch(/is dark/i);
 
       comp.clicked();
     expect(comp.message)
-      .withContext('on after clicked')
-      .toMatch(/is on/i);
+      .withContext('light after clicked')
+      .toMatch(/is light/i);
   });
+
+
 });
 
 
